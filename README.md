@@ -3,8 +3,7 @@
 ![mfsjs header image](./mfsjs.png)
 <div align="center">
 
-### 🚀 **[Try out the demo here](https://minorbug.github.io/mfsjs/index.html)** 🚀
-#### Experience it now at minorbug.github.io/mfsjs
+###  **[Try out the demo here](https://minorbug.github.io/mfsjs/index.html)** 
 
 </div>
 
