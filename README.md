@@ -1,2 +1,2 @@
-# masks
+# MFSjs
 Library for reading / writing 400k Macintosh File System (MFS) images
