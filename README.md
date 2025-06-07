@@ -9,16 +9,15 @@
 </div>
 
 
-## What's This All About?
+## But.. why?
 
-Welcome to MFSjs, a JavaScript library that lets you travel back to 1984 - at least in terms of file systems! This project brings the classic Macintosh File System (MFS) and MacPaint image format to the modern web.
+This project lets you read and write to the classic Macintosh File System (MFS), as well as providing a simple way to create MacPaint images that can be edited in an emulated Mac or transferred to real hardware.
 
-With MFSjs, you can:
-- Create and manipulate 400K MFS disk images (just like the original Mac floppies!)
+- Create and manipulate 400K MFS disk images
 - Convert modern images to authentic MacPaint (PNTG) format
 - Package your MacPaint masterpieces into disk images ready for classic Mac emulators
 
-Whether you're a vintage computing enthusiast, a digital preservationist, or just feeling nostalgic for the days of 1-bit graphics, this project has you covered!
+## Background
 
 ### The Macintosh File System (MFS)
 
@@ -40,9 +39,9 @@ MacPaint images have a fixed format:
 - 1-bit monochrome (black and white only)
 - Often compressed using the PackBits algorithm
 
-## The LLM-Generated Documentation
+## Researched and created by LLMs
 
-This project was created with the help of Large Language Models (LLMs), which generated detailed documentation to guide the implementation. Here's a summary of the key markdown files:
+I used Google's Gemini Deep Research to gather MFS, MacPaint file format, and dithering algorithm definitions. Below are some planning documents that I produced from that research.
 
 ### mfs-js-llm-guide.md
 
@@ -75,7 +74,6 @@ The document provides the precise technical details needed to faithfully reprodu
 
 1. Clone or download this repository to your local machine
 2. Open the project folder in your web browser
-3. No additional installation is required - the application runs entirely in your browser!
 
 ### Prerequisites
 
@@ -102,10 +100,9 @@ The MFSjs web application provides an intuitive interface for converting images 
      - Bayer (ordered pattern)
      - Threshold (high contrast)
    - Adjust algorithm-specific parameters if desired
-   - Preview the result in real-time
 
 4. **Configure Disk Settings**:
-   - Set the disk size (default 400KB)
+   - Set the disk size (default 400KB) -- ** This is experimental -- I have had corrupted images occasionally if the size isnt 400k **
    - Name your volume (up to 27 characters)
    - Monitor the disk usage percentage as you add images
 
@@ -124,11 +121,7 @@ Once you've created your MFS disk image, you'll want to see it in action! Here's
 
 ### Recommended Emulator
 
-Visit [http://infinitemac.org](http://infinitemac.org) to test your disk images in an authentic Mac environment. This browser-based emulator lets you experience your MacPaint images on various classic Mac models without installing any software. Simply upload your .dsk file and boot up a virtual Mac to see your images in their natural habitat!
-
-## Conclusion
-
-MFSjs brings a piece of computing history to the modern web, allowing you to create authentic MacPaint images and MFS disk images compatible with classic Macintosh emulators. Whether you're preserving digital artifacts or just having fun with retro computing, we hope you enjoy this blast from the past!
+Visit [http://infinitemac.org](http://infinitemac.org) to test your disk images in an authentic Mac environment. This browser-based emulator lets you experience your MacPaint images on various classic Mac models without installing any software. Upload your .dsk file and boot up a virtual Mac to see your images.
 
 ## License
 
