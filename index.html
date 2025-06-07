@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacPaint Image Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Cropper.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>MacPaint-to-400k Disk Image Converter</h1>
+<h5>Vibe-coded for retro funsies by <a href="https://github.com/minorbug" target="_blank">@minorbug</a></h5>
+        <div id="drag-drop-area" class="section">
+            <p>Drag & Drop Images Here</p>
+        </div>
+
+        <div id="thumbnail-list-area" class="section">
+            <h2>Image Queue</h2>
+            <div id="thumbnails">
+                <!-- Thumbnails will be added here -->
+            </div>
+            <button id="clear-all-button" style="margin-top: 10px;">Clear All Images</button>
+        </div>
+
+        <div class="main-content-area section">
+            <div id="editing-area">
+                <h2>Edit Image</h2>
+                <div class="cropper-container">
+                    <img id="cropper-image" src="#" alt="Selected Image for Cropping">
+                </div>
+
+                <div id="dithering-options">
+                    <h3>Dithering Options</h3>
+
+                    <div>
+                        <input type="checkbox" id="macpaint-ratio-checkbox">
+                        <label for="macpaint-ratio-checkbox">Constrain to MacPaint Ratio (576:720)</label>
+                    </div>
+                    <hr>
+                    <label for="dither-algorithm">Algorithm:</label>
+                    <select id="dither-algorithm">
+                        <option value="atkinson">Atkinson</option>
+                        <option value="floyd-steinberg">Floyd-Steinberg</option>
+                        <option value="bayer">Bayer (4x4)</option>
+                        <option value="threshold">Threshold</option>
+                    </select>
+                    <!-- More specific options for algorithms can be added here -->
+                    <div id="threshold-options" class="dither-params" style="display:none;">
+                        <label for="threshold-value">Threshold: <span id="threshold-value-display">128</span></label>
+                        <input type="range" id="threshold-value" value="128" min="0" max="255" step="1">
+                    </div>
+                     <div id="bayer-options" class="dither-params" style="display:none;">
+                        <label for="bayer-matrix-size">Bayer Matrix Size:</label>
+                        <select id="bayer-matrix-size">
+                            <option value="2">2x2</option>
+                            <option value="4" selected>4x4</option>
+                            <option value="8">8x8</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="preview-area">
+                <h3>MacPaint Preview (576x720)</h3>
+                <canvas id="dither-preview-canvas" width="576" height="720"></canvas>
+            </div>
+        </div>
+
+        <div id="disk-management-area" class="section">
+            <h2>Disk Image Settings</h2>
+            <div>
+                <label for="disk-size">Disk Size (KB):</label>
+                <input type="number" id="disk-size" value="400" min="100">
+            </div>
+            <div>
+                <label for="volume-name">Volume Name:</label>
+                <input type="text" id="volume-name" value="MyMacPaintDisk" maxlength="27">
+            </div>
+            <div>
+                <p>Disk Usage: <span id="percentage-full">0</span>% full</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <button id="save-disk-image-button">Save to Disk Image...</button>
+        </div>
+    </div>
+
+    <!-- Cropper.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+    <!-- MFS.js and MacPaint.js (assuming they are in the same directory or paths are adjusted) -->
+    <script src="mfs.js"></script>
+    <script src="macpaint.js"></script>
+    <!-- Main application script -->
+    <script src="app.js"></script>
+</body>
+</html>

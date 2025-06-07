@@ -1,0 +1,173 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#drag-drop-area {
+    border: 2px dashed #ccc;
+    padding: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+#drag-drop-area p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #777;
+}
+
+#thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.thumbnail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#thumbnails img.thumbnail-image { /* Updated selector */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-thumbnail-button {
+    padding: 3px 8px;
+    font-size: 0.8em;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.remove-thumbnail-button:hover {
+    background-color: #c82333;
+}
+
+
+#thumbnails img.thumbnail-image.selected { /* Updated selector */
+    border-color: #007bff;
+}
+
+.main-content-area {
+    display: flex;
+    gap: 20px;
+}
+
+#editing-area {
+    flex: 2;
+}
+
+.cropper-container {
+    width: 100%;
+    max-width: 576px; /* Max width for cropper image */
+    height: auto; /* Adjust height automatically */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+#cropper-image {
+    display: block;
+    max-width: 100%; /* Ensure image is responsive within its container */
+}
+
+
+#dithering-options label,
+#disk-management-area label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#dithering-options select,
+#dithering-options input,
+#disk-management-area input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dither-params {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+
+#preview-area {
+    flex: 1;
+    text-align: center;
+}
+
+#dither-preview-canvas {
+    border: 1px solid #aaa;
+    background-color: #fff;
+    /* Fixed size, but ensure it doesn't overflow its container if screen is too small */
+    max-width: 100%; 
+    height: auto; /* Maintain aspect ratio if scaled by max-width */
+}
+
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content-area {
+        flex-direction: column;
+    }
+    #editing-area, #preview-area {
+        flex: none;
+        width: 100%;
+    }
+    #dither-preview-canvas {
+        width: 100%; /* Make canvas responsive but keep its internal resolution */
+        height: auto;
+    }
+}
